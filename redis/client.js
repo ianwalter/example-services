@@ -4,7 +4,7 @@ const redis = require("redis");
 redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
 
 redisClient.on("error", function(err) {
-    console.log("Error " + err);
+    console.error("Error " + err);
 });
 
 redisClient.set("string key", "string val", redis.print);
